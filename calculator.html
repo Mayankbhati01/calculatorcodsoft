@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                margin: 0px;
+                    background-image: url(calbackgrnd.jpg);
+                    background-size: cover;
+                
+            }
+            .p1
+            {
+            font-size:40px;
+            color: #fafbfc;
+            margin-left: 72px;
+            padding-top: 10px;
+                
+            }
+            .calc{height: 410px; width:22%; background-color: rgb(4, 5, 5);margin-left: 600px;margin-top: 170px;border-radius: 20px;
+            
+            }
+            
+            #calculator 
+            {
+            width: 260px;
+            padding: 10px;
+            border: 3px solid #702963;
+            border-radius: 20px;
+            margin-left: 23px;
+            }
+            
+            .buttons
+            {
+                border-color: #702963;
+                border-radius: 3px;
+                background-color: rgb(9, 9, 9);
+            }
+            input[type="text"] 
+            {
+            width: 250px;
+            margin-bottom: 10px;
+            padding: 5px;
+            color: aliceblue;
+        
+            }
+
+            input[type="button"] 
+            {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 18px;
+            color: aliceblue;
+            }
+        
+        </style>
+    </head>
+    <body>
+        
+
+                
+            
+            <div class="calc"><p class="p1">Calculator</p>
+                <div id="calculator">
+                    
+                    <input type="text" id="display"  class="buttons" readonly>
+                    <input type="button" value="7" onclick="addToDisplay('7')" class="buttons">
+                    <input type="button" value="8" onclick="addToDisplay('8')" class="buttons">
+                    <input type="button" value="9" onclick="addToDisplay('9')" class="buttons">
+                    <input type="button" value="/" onclick="addToDisplay('/')" class="buttons">
+                    <br>
+                    <input type="button" value="4" onclick="addToDisplay('4')" class="buttons">
+                    <input type="button" value="5" onclick="addToDisplay('5')" class="buttons">
+                    <input type="button" value="6" onclick="addToDisplay('6')" class="buttons">
+                    <input type="button" value="-" onclick="addToDisplay('-')" class="buttons">
+                    <br>
+                    <input type="button" value="1" onclick="addToDisplay('1')" class="buttons">
+                    <input type="button" value="2" onclick="addToDisplay('2')" class="buttons">
+                    <input type="button" value="3" onclick="addToDisplay('3')" class="buttons">
+                    <input type="button" value="+" onclick="addToDisplay('+')" class="buttons">
+                    <br>
+                    <input type="button" value="0" onclick="addToDisplay('0')" class="buttons">
+                    <input type="button" value="." onclick="addToDisplay('.')" class="buttons">
+                    <input type="button" value="C" onclick="clearDisplay()" class="buttons">
+                    <input type="button" value="=" onclick="calculate()" class="buttons">
+                </div>
+                <script>
+                    function addToDisplay(value) {
+                        document.getElementById('display').value += value;
+                    }
+            
+                    function clearDisplay() {
+                        document.getElementById('display').value = '';
+                    }
+            
+                    function calculate() {
+                        try {
+                            document.getElementById('display').value = eval(document.getElementById('display').value);
+                        } catch (error) {
+                            document.getElementById('display').value = 'Error';
+                        }
+                    }
+                </script>
+            </div>
+</body>
+</html>
